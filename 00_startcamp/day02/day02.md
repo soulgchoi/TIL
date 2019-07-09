@@ -1,4 +1,4 @@
-# 190709 startcamp_day02
+# day02
 
 # Git
 
@@ -86,7 +86,7 @@ git; 버전관리를 해주는 감시카메라
 - `rm <filename` > 삭제
    - `ls` > 리스트
 - <u>띄어쓰기로 구분</u>
-  
+   
 
 
 3. 내가 어디에 있는지 늘 주의하자!
@@ -109,45 +109,3 @@ git; 버전관리를 해주는 감시카메라
 
 
 
-## import web_browser
-
-1. 여러개의 웹 브라우저를 한번에 열기
-
-   ```python
-   import webbrowser
-   
-   urls = [
-       'www.github.com',
-       'www.google.com',
-       'www.mail.google.com',
-       'http://edu.ssafy.com/edu/main/index.do',
-       'https://www.youtube.com/channel/UCyn-K7rZLXjGl7VXGweIlcA'
-   ]
-   
-   for url in urls:
-       webbrowser.open(url)
-   ```
-
-   
-
-2. 정보 스크랩하기
-
-   자주 확인하는 정보를 (자동)스크랩하기 ex) 코스피지수, 부동산가격 등
-
-
-
-### **웹Web은 달라고 해야 준다**
-
-어떻게? 뭘?
-
-**요청request과 응답response**
-
-브라우저는 요청을 **보내는** 대표 프로그램
-
-​	**<u>주소</u>**url를 보낸다 = **<u>요청</u>**을 보낸다
-
-​	**<u>문서</u>**(HTML, XML, Json)로 돌려준다 = **<u>응답</u>**한다
-
-url 은 요청에 대한 상세이다
-
-WYSIWYG
