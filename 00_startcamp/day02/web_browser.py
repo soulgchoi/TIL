@@ -10,4 +10,3 @@ urls = [
 
 for url in urls:
     webbrowser.open(url)
-
