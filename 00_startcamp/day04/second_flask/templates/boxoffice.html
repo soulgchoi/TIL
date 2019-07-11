@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Box office</title>
+</head>
+<body>
+    <h1>Box office</h1>
+     <ol>
+        {% for movie in movies %}
+            <li>{{ movie }}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
