@@ -553,6 +553,19 @@ if __name__ == "__main__":
 
 ------
 
-## 04. stock.py
+## cf. stock.py
 
 제공하는 패키지를 가져다 쓰기
+
+``````python
+# 패키지 가져다 쓰기
+from iexfinance.stocks import Stock
+
+company = Stock('AAPL', token=<#사이트에서 가져오기>)
+
+print(company.get_quote())
+``````
+
+cf. `companies = ['AAPL', 'GOOGL', 'TSLA', 'FB', 'AMZN']`
+
+​	등등 넣어서 `random.choice`할 수도 있음
