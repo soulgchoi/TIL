@@ -1,0 +1,20 @@
+div {
+    border: solid 1px black;
+    padding: 10px 1px 10px 10px; /* top right bottom legt 시계방향 */
+    margin: 10px /* 상하좌우 전부 */
+    /* 상하 합하면 마진 20인데 왜 10으로 뜸? */
+    /* 브라우저가 맘대로 바꾼거 */
+}
+/* div 중에 클래스 a */
+div.a {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: tomato;
+    padding: 20px;
+    /* 위아래 50 / 상하 30 의미 */
+    margin: 50px 30px
+}
+
+article.like-p {
+    margin: 1rem 0;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 'v-': vue directive -->
+        <ul>
+            <!-- 'v-for' 가 있는 node 가 반복 -->
+            <!-- <li v-for="todo in todos">{{ todo }}</li> -->
+            <!-- <li v-for="todo in todos">
+                {{ todo.content }}
+                {{ todo.completed }}
+            </li> -->
+
+            <!-- 'v-if' 는 평가식이 true 일때만 보임 -->
+            <!-- 'v-for' 가 'v-if' 보다 우선순위 (todo 가 일단 나와야하니까) -->
+            <!-- <li v-for="todo in todos" v-if="!todo.completed" v-on:click="todo.completed = true"> -->
+            <li v-for="todo in todos" v-if="!todo.completed" v-on:click="check(todo)">
+                {{ todo.content }}
+            </li>
+            <!-- <div></div> if 와 else 가 떨어져있으면 바로 에러 -->
+            <li v-else v-on:click="check(todo)">
+                [완료]
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 꼭 app 써야 하는건 아님
+        // new Vue() 만 써도 동작함, app 을 직접 부를 일이 없기 때문
+        // 대신 console 에서 테스트하기 좋아짐
+        const app = new Vue({
+            el: '#app',
+            // data 가 수정된다 = DOM re-render 가 일어난다
+            data: {  // data 는 object
+                todos: [
+                    // '스터디하기',
+                    // '저녁먹기',
+                    // '복습하기',
+                    {
+                        content: '스터디 하기',
+                        completed: false
+                    },
+                    {
+                        content: '저녁먹기',
+                        completed: false
+                    },
+                    {
+                        content: '복습하기',
+                        completed: false
+                    },
+                    {
+                        content: '싸우기',
+                        completed: true
+                    },
+                ],
+            },
+            methods: {
+                check: function(todo) {
+                    // todo.completed = todo.completed ? false : true
+                    todo.completed = !todo.completed;
+                    // if (todo.completed) {
+                        // todo.completed = false;    
+                    // } else {
+                    //     todo.completed = true;
+                    // }
+                }
+            },
+        });
+    </script>
+</body>
+</html>

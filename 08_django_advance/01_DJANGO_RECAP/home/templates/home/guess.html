@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}  <!-- base.html 의 내용 상속 -->
+{% block title %}  <!-- base의 block 내용 그대로 가져와야 함 -->
+    Guess me
+{% endblock %}
+
+{% block body %}
+    <h1>질문지</h1>
+    <!-- submit 양식을 어디로 보낼지 -->
+    <!-- method 는 default 로 get-->
+    {% comment %} <form action="{% url 'home:answer' %}" method="GET"> {% endcomment %}
+    <!-- GET 요청은 데이터가 보호받지 않음. 아무나 봐도 되는 데이터 -->
+    <!-- 보호받는 요청은 POST -->
+    <form action="{% url 'home:answer' %}" method="POST">
+        <!-- POST 쓰기 위해 넣어야 하는 것 -->
+        {% csrf_token %}
+        <div>
+            <!-- id 먼저 > for -->
+            <label for="q1">내 생일은?</label>
+            <input id="q1" name="q1" type="text">
+        </div>
+        <div>
+            <label for="q2">내 최애 음식은?</label>
+            <input id="q2" name="q2" type="text">
+        </div>
+        <div>
+            <label for="q3">내 휴대폰 기종은?</label>
+            <input id="q3" name="q3" type="text">
+        </div>
+            <input type="submit">
+    </form>
+{% endblock %}
+
+

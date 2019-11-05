@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: goldenrod;
+            color: ivory;
+            width: 960px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi</h1>
+    <p>0</p>
+    <!-- click 하면 plus/minus 함수 실행 -->
+    <button onclick="plus();">+</button>
+    <button onclick="minus();">-</button>
+    <script>
+        buttons = document.querySelectorAll('button');
+        plusButton = buttons[0];
+        minusButton = buttons[1];
+        // plus 함수
+        function plus () {
+            number = document.querySelector('p').innerText;
+            number = parseInt(number) + 1;
+            document.querySelector('p').innerText = number;
+            console.log('1을 더한 결과 ' + number + ' 가 되었습니다.');
+        }
+        // minus 함수
+        function minus () {
+            number = document.querySelector('p').innerText;
+            number = parseInt(number) - 1;
+            document.querySelector('p').innerText = number;
+            console.log(`1을 뺀 결과 ${number} 가 되었습니다.`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+model: Student
+name: models.CharField(max_length=10)
+age: models.IntegerField()
+major: models.TextField()
+
+App: classroom
+
+/classroom/students/
+/classroom/students/new
+/classroom/students/create
+/classroom/students/1/edit
+/classroom/students/1/update

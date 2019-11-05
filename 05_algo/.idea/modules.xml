@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/05_algo.iml" filepath="$PROJECT_DIR$/.idea/05_algo.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/알고리즘 과목평가/.idea/알고리즘 과목평가.iml" filepath="$USER_HOME$/PycharmProjects/알고리즘 과목평가/.idea/알고리즘 과목평가.iml" />
+    </modules>
+  </component>
+</project>

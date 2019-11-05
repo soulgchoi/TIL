@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+</head>
+<body>
+  <!-- form 태그 하나 = 주문서 한 장 -->
+  <!-- action = 받을 곳, 보통 url -->
+    <form action="#">
+    <form>
+    <div>
+    <!-- 사용자에게 보여주는 용도 -->
+      <input type="text" placeholder="이름을 입력해주세요">
+      <!-- 굳이 사용자에게 보여줄 필요 없는 것들 -->
+      <input type="hidden" value=":9">
+      <input type="number">
+      <input type="email">
+      <input type="date">
+      <input type="password">
+      <input type="color">
+      <input type="submit">
+    </div>  
+    <div>
+      <!-- value 를 줘야 우리가 실제로 데이터를 받을 수 있음 -->
+      <!-- name 값 같게 주면 하나만 선택가능 -->
+      <input type="radio" value="python" name=lang checked>Python<br>
+      <input type="radio" value="HTML" name=lang>HTML<br>
+      <input type="radio" value="CSS" name=lang>CSS<br>
+      <input type="radio" value="JS" name=lang disabled>JS<br>
+    </div>
+    <div>
+      <select name="menu">
+        <!-- 실제로 받는 데이터는 a, b, c -->
+        <option value="a">오징어볶음</option>
+        <option value="b">우돈비빔밥</option>
+        <option value="out" disabled>초밥</option>
+      </select>
+    </div>
+    <div>
+        <input type="checkbox" name="option" value="overstudy">야자
+        <input type="checkbox" name="option" value="additional">보충
+        <input type="checkbox" name="option" value="weekend">주말
+    </div>
+  </form>
+</body>
+</html>

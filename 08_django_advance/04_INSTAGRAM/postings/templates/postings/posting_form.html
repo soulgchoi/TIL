@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block body %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form posting_form %}
+        {% comment %} image_form 이 있을 때만 (수정할 때는 image 받지 않기 때문) {% endcomment %}
+        {% if image_form %}
+            {% bootstrap_form image_form show_label=False %}
+        {% endif %}
+        {% buttons %}
+            <button class="btn btn-primary">Submit</button>
+        {% endbuttons%}
+    </form>
+
+{% endblock body %}

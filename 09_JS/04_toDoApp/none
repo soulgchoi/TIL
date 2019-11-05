@@ -1,0 +1,36 @@
+191030
+const a = (x, y) => { return x + y }
+a(1, 2)
+// 위아래 같음
+((x, y)=>{return x+y})(1, 2)
+// 파이썬에서도
+print((lambda x, y: x + y)(2, 2))
+
+// 함수도 객체다!
+
+def add(x, y):
+    return x + y
+
+calculator = {
+    'add': add,
+    'sub': lambda x, y: x - y,
+}
+
+print(calculator['add'](1, 2))
+
+
+# 1급 객체 조건
+# 인자로 넘어갈 수 있고, return 으로 나올 수 있다.
+def a(x):
+    return y
+x, y 들어갈 수 있는것 전부 1급 객체
+
+def a():
+    def add(x, y):
+        return x + y
+    return add
+print(a()(1, 2))
+
+# django 에서 views 쓸 때 사실 함수를 객체로 쓰고 있었음
+# views.index 같은 것
+# 인자로 넘어가는 함수 == 콜백함수

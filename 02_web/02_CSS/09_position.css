@@ -1,0 +1,61 @@
+.parent {
+  width: 150px;
+  height: 150px;
+  background-color: lemonchiffon;
+  border: 1px solid tomato;
+  margin-top: 30px; margin-left: 30px
+}
+
+.static-box {
+  position: static;
+  background-color: lightsalmon;
+  color: olivedrab;
+  text-align: center;
+  height: 80px;
+}
+
+.relative-box {
+  position: relative;
+  top: 50px; left: 50px;
+  background-color: lightcyan;
+  text-align: center;
+  height: 80px;
+  /* width 준 적 없는데 왜 parent 랑 같을까? */
+  /* width, height 는 상속 안됨, 자식 요소는 기본적으로 부모 요소보다 안큼 */
+}
+
+.rel {
+  position: relative;
+}
+
+.absolute-box {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  top: 50px;
+  left: 50px;
+  background-color: rgba(216, 112, 147, 0.616);
+  text-align: center;
+}
+
+.fixed-box {
+  position: fixed;
+  color: black;
+  text-align: center;
+  background-color: seagreen;
+}
+
+.sidebar {
+  top: 0;
+  right: 0;
+  width: 15vw;
+  height: 100vw;
+  z-index: 1;
+}
+
+.footer {
+  bottom: 0;
+  width: 100vw;
+  background-color: plum;
+  height: 10vw;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const userName = prompt('Who are you?');
+        let massage = '';
+
+        if (userName === 'Admin') {
+            message = 'This is secret admin page';
+        } else if (userName === 'soulg') {
+            message = 'Hi!';
+        } else {
+            message = `Hello ${userName}`;
+        };
+
+        document.write(`<h1>${message}</h1>`);
+
+        // 삼항연산자 ternary expression
+        document.write(userName === 'Admin' ? ':)' : '0:)');
+    </script>
+</body>
+</html>

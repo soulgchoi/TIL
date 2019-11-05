@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 스타일 부분 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 익스플로러, 엣지를 위해 -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS basic</title>
+  <style>
+  /* CSS 의 핵심은 셀렉터 */
+  /*  * 는 전체를 의미, universal */
+    * {
+    /* margin, padding = 여백 */
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: teal;
+    }
+    
+    h2 {
+      color: yellowgreen;
+    }
+    
+    h3 {
+      /* important 최우선!! */
+      color: turquoise !important;
+    }
+    /* . 은 클래스 의미 */
+    .blue {
+      color: cadetblue;
+    }
+
+    .big {
+      font-size: 100px;
+    }
+
+    #green {
+      color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="big">Hello, CSS</h1>
+  <!-- 공통되는 클래스 부여, 위에서 셀렉팅 할 때 클래스로 -->
+  <h2 id="green" class="blue">Selector</h2>
+  <h3 class="blue big">See how it works</h3>
+</body>
+</html>

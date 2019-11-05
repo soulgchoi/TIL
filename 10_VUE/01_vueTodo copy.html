@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text"
+            v-model="newTodo"
+            v-on:keyup.enter="addTodo"
+        >
+        <button v-on:click="addTodo">+</button>
+        <button v-on:click="clearCompleted">Clear Completed</button>
+        <ul>
+            <li v-for="todo in todos" v-if="!todo.completed" v-on:click="check(todo)">
+                {{ todo.content }}
+            </li>
+            <li v-else v-on:click="check(todo)">
+                [완료] {{ todo.content }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {  
+                newTodo: '',
+                todos: [],
+            },
+            methods: {
+                check: function(todo) {
+                    todo.completed = !todo.completed;
+                },
+                addTodo: function() {
+                    this.todos.push({
+                        // string 을 object 로 만들어서 밀어넣음
+                        content: this.newTodo,
+                        completed: false,
+                    })
+                    // this.newTodo = null;
+                    this.newTodo = '';
+                },
+                clearCompleted: function() {
+                    // 새로운 리스트를 만들어서,
+                    const newTodos = [];
+                    // 완전 탐색
+                    for (const todo of this.todos) {
+                        // 안끝났으면 
+                        if (!todo.completed) {
+                            // 새로운 리스트에 저장
+                            newTodos.push(todo);
+                        }
+                    }
+                    // 내 리스트를 갈아끼움
+                    this.todos = newTodos;
+                },
+                clearCompleted2: function() {
+                    this.todos = this.todos.filter(todo => {
+                        return !todo.completed
+                    })
+                },
+            },
+        });
+    </script>
+</body>
+</html>

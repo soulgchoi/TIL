@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <ul>
+        <!-- 절대경로로 써주는 것이 좋다. -->
+        <!-- <li><a href="/home/">Index</a></li> -->
+        <li><a href="{% url 'home:index' %}">Index</a></li>
+        <!-- <li><a href="[/home/hi/asdf]">Hi</a></li> -->
+        <li><a href="{% url 'home:guess' %}">Guess</a></li>
+    </ul>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

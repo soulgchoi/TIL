@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Start</title>
+</head>
+<body>
+    <div id="app">
+        <!-- {{ }} 바로 data 의 key 로 접근하여 렌더링 가능 -->
+        <h1>{{ message }}</h1>
+        <p>{{ count }}</p>
+        <div>
+            <!-- 괄호 써도 되고 안써도 됨, 함수 인자를 받을 경우는 많이 쓴다. -->
+            <!-- <button v-on:click="plus(3)">+</button> -->
+            <button v-on:click="plus">+</button>
+            <button v-on:click="minus">-</button>
+        </div>
+    </div>
+    <!-- script 위아래 순서 꼭 지킬 것 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            // el: 어떤 HTML element() , HTML node(tag)와 연동(Mount)
+            el: '#app',
+            // Vue instance 의 시작할 때의 속성 값(= 'object'; 숫자, 문자, 배열, ...)
+            data: {
+                message: 'Hello, Vue!',
+                // app.message = 'Bye Vue' 라고 browser console 에서 쳤을 때, 바로 변함 >> 반응형 웹!
+                count: 0,
+            },
+            // methods 는 보통 data 를 바꾸는 함수들을 정의, data 가 바뀌면 무조건 re-rendering
+            methods: {
+                // vue instance 안에서는 ()=>{} (arrow function) 금지
+                // 반드시 function 써줘야 함
+                // plus: function (n) { this.count+=n },
+                plus: function () { this.count++ },
+                minus: function () { this.count-- },
+                // console 에서 app.plus() / app.minus() 로 실행
+                // 데이터가 바뀔 때 변수도 렌더링돼서 알아서 바뀜
+            },
+        });
+    </script>
+</body>
+</html>

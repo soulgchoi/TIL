@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+</head>
+<body>
+  <!-- form 태그 하나 = 주문서 한 장 -->
+  <!-- action = 받을 곳, 보통 url -->
+  <form action="#">
+    <h1>FORM</h1>
+    <p>주문서를 작성하여 주십시오.</p>
+    <label for="name">이름:</label>
+    <!-- 사용자에게 보여주는 용도 -->
+    <input type="text" placeholder="이름을 입력해주세요">
+    <br>
+    <label for="date">날짜:</label>
+    <input type="date">
+
+    <h2>1. 샌드위치 선택</h2>
+    <input type="radio" value="eggmayo" name="sandwitch">에그마요
+    <input type="radio" value="BMT" name="sandwitch">이탈리안 비엠티
+    <input type="radio" value="turkey" name="sandwitch">터키 베이컨 아보카도
+    <hr>
+    
+    <h2>2. 사이즈 선택</h2>
+    <input type="number" min="15" max="30" step="15">
+    <hr>
+
+    <h2>3. 빵</h2>
+    <select name="bread">
+      <option value="honey">허니 오트</option>
+      <option value="flat" disabled>플랫브레드</option>
+      <option value="italian">하티 이탈리안</option>
+    </select>
+    <hr>
+
+    <h2>4. 야채/소스</h2>
+    <input type="checkbox" name="option" value="tomato">토마토<br>
+    <input type="checkbox" name="option" value="cucumber">오이<br>
+    <input type="checkbox" name="option" value="pepper">할라피뇨<br>
+    <input type="checkbox" name="option" value="hot">핫 칠리<br>
+    <input type="checkbox" name="option" value="bbq">바베큐<br>
+    
+    <input type="submit" name="submit" value="submit">
+    
+  </form>
+</body>
+</html>

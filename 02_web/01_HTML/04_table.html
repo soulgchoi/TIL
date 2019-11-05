@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <title>Table - lunch</title>
+  <style>
+    /* 스타일시트 주석은 이것입니다 */
+    /* Style 정의 1번 방법 */
+    /* html 문서 head 안의 style 태그에 정의한다. */
+    
+    /* 무엇을; 태그이름 - 어떻게; {} 안에 넣어서*/
+    td {
+      border: 1px solid rosybrown;
+    }
+    /* 보더 넣을 때 순서는 상관없음 */
+    th {
+      border: 2px dashed saddlebrown;
+    }
+  </style>
+</head>
+<body>
+  <!-- html 에서 여러개 줄 때는 , 쓰지 않고 띄어쓰기로 구분 -->
+  <table border="1px solid black">
+    <!-- table row (한 줄), row 들을 쌓아 하나의 table 을 만듦 -->
+    <tr>
+      <th></th>
+      <th>월</th>
+      <th>화</th>
+      <th>수</th>
+    </tr>
+    <tr>
+      <td>A 코스</td>
+      <!-- 가로줄 두개를 합치는거라 row -->
+      <td rowspan="2">짬뽕</td>
+      <!-- 열 두개를 합치는거리 col -->
+      <td colspan="2">초밥</td>
+    </tr>
+    <tr>
+      <td>B 코스</td>
+      <td>김치찌개</td>
+      <td>삼계탕</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>TIME</th>
+      <th>INDOOR</th>
+      <th colspan="2">OUTDOOR</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td>소극장</td>
+      <td>잔디마당</td>
+      <td>대공연장</td>
+    </tr>
+    <tr>
+      <td>10:00</td>
+      <td rowspan="2">안녕하신가영</td>
+      <td></td>
+      <td>10CM</td>
+    </tr>
+    <tr>
+      <td>13:00</td>
+      <td rowspan="2">선우정아</td>
+      <td rowspan="2">참깨와 솜사탕</td>
+    </tr>
+    <tr>
+      <td>15:00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>17:00</td>
+      <td>크러쉬</td>
+      <td></td>
+      <td>폴킴</td>
+    </tr>
+  </table>
+</body>
+</html>

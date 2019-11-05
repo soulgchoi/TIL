@@ -1,0 +1,24 @@
+<form action="{% url 'board:new_comment' article.id %}" method="POST">
+    {% csrf_token %}
+        {% comment %} <input type="text" name="comment_content"> {% endcomment %}
+        {{ comment_form.as_p }}
+        <input type="submit">
+    </form>
+
+    {% if comments %}
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    {{ comment.content }}
+                    {% comment %}
+                        id 순서 맞춰서 써야 함
+                        안맞추려면 article_id=article.id comment_id=comment.id 이렇게 딱 뭐라고 말해주기
+                    {% endcomment %}
+                    <form method="POST" action="{% url 'board:delete_comment' article.id comment.id %}">
+                        {% csrf_token %}
+                        <input type="submit" value="삭제">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}

@@ -1,0 +1,25 @@
+{% comment %} <form method="POST">
+<!-- form 에 action 이 있다면 new/edit 에서 문제가 생길 것 -->
+    {% csrf_token %}
+    <div>
+        <label for="title">제목:</label>
+        <input id="title" name="title" value={{ article.title }}>
+    </div>
+    <div>
+        <label for="content">내용:</label>
+        <textarea id="content" name="content" cols="30" rows="10">{{ article.content }}</textarea>
+    </div>
+    <div>
+        <input type="submit" value="제출">
+    </div>
+</form> {% endcomment %}
+
+
+<form method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% comment %} {{ form.as_table}} {% endcomment %}
+    <!-- form 태그 안에 button 넣으면 자동으로 submit 으로 작동함 -->
+    <button>hi</button>
+    <input type="submit">    
+</form>

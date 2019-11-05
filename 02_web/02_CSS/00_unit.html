@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /* h1 도 절댓값 X 상대값 O */
+    h1 {
+      font-size: 100%;  /*  브라우저 기본 px/100 % */
+    }
+
+    p {
+      font-size: 1rem;  /* 브라우저 기본 폰트사이즈 == 1rem */
+      color: #f0f;
+      /* R  G  B */
+      /* range(256) */
+      /* ff ff ff */
+      color: rgb(255, 255, 255);
+      color: rgba(255, 0, 0, 0.541);  /* 투명도까지 */
+    }
+
+    div {
+      font-size: 50%;  /* 8px */
+    }
+
+    div li {
+      font-size: 2em;  /* 상속받은 100%가 1em , 16px 됨, 50% 상속받았으니까 */
+    }
+
+    div > div {
+      font-size: 0.8em;  /* rem 이면 중첩 X */
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!-- 8 px -->
+    aaa
+    <div>
+      <!-- 8px * 0.8 -->
+      bbb
+      <div>
+        <!-- 8px * 0.8 * 0.8 -->
+        ccc
+        <div>
+          <!-- 8px * 0.8 * 0.8 * 0.8 -->
+          ddd
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>This is my site
+  <div>
+    <h2>My cafe</h2>
+    <p>This is great cafe</p>
+    <ul>
+      <li>파스타</li>
+      <li>샐러드</li>
+    </ul>
+  </div>
+  </h1>
+</body>
+</html>

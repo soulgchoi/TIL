@@ -1,0 +1,9 @@
+{% extends 'utils/base.html' %}
+{% block title %}Throw{% endblock %}
+{% block body %}
+<h1>Translate</h1>
+<form action="/utils/catch/" method="GET">
+    <input type="text" name="word">
+    <input type="submit" value="번역">
+</form>
+{% endblock %}

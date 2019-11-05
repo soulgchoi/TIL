@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}New article{% endblock title %}
+
+{% block body %}
+<h1>New article</h1>
+{% comment %} <form method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form.as_table}}
+    <input type="submit">    
+</form>
+{% endcomment %}
+{% include 'board/_form.html' %}
+{% endblock body %}
+
+
+{% comment %} 왜 중요해요? > db에 반영 될 정보니까! {% endcomment %}
+{% comment %} <form action="{% url 'board:new' %}" method="POST"> {% endcomment %}
+<!-- action 이 없으면 제자리 -->
+{% comment %} <form method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="title">제목:</label>
+        <input id="title" name="title">
+    </div>
+    <div>
+        <label for="content">내용:</label>
+        <textarea id="content" name="content" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="제출">
+    </div>
+</form> {% endcomment %}
+{% comment %} {% include 'board/_form.html' %} {% endcomment %}

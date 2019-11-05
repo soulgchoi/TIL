@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Selector 1</title>
+  <style>
+    /* , 로 여러개 한번에 */
+    h1, p, a {
+      color: tomato;
+    }
+
+    .pp {
+      color: orange;
+    }
+
+    /* key, value 까지 볼 수 있음, 우선순위 높고 정확도 높음 */
+    a[href] {
+      color: palegreen;
+    }
+    
+    a[target="_blank"] {
+      color: papayawhip;
+    }
+
+    /* 대충 ~ 하면 셀렉팅하도록 */
+    /* 하나라도 가지고 있으면 */
+    h2[title~="greeting"] {
+      color: goldenrod;
+    }
+
+    /* div 안에 있는 p */
+    /* 쉼표 있으면 모든 div & 모든 p 의미 */
+    div p {   /* 모든 div 안의 p 후손 요소 */
+      color: hotpink;
+    }
+
+    div > p {  /* 정확히 div 의 자식 요소 */
+      color: sandybrown;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello</h1>
+  <p>Happy Classroom</p>
+  <p class="pp">SSAFY</p>
+
+  <a href="#">a</a>
+  <a href="#" target="_top">b</a>
+  <a href="#" target="_blank">c</a>
+  <a>d</a>
+  <!-- 복수의 속성값 (띄어쓰기 구분) -->
+  <h2 title="p greeting">Hi</h2>
+  <h2 title="p-goodbye">Bye</h2>
+  <h2 title="hello greeting">Hello</h2>
+
+  <!-- div 안에 있을 때와 없을 때 -->
+  <div>
+    <p>나는 div 자식</p>
+    <section>
+      <p>나는 div 후손</p>
+    </section>
+  </div>
+
+  <p>not me</p>
+</body>
+</html>

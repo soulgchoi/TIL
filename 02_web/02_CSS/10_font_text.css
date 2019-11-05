@@ -1,0 +1,59 @@
+.size-40 {
+  font-size: 40px;
+}
+
+.size-2x {
+  font-size: 2.0em;
+}
+
+.size-150p {
+  font-size: 150%;
+}
+
+.size-large {
+  /* 보통 em 단위로 쓰기 때문에 large 안씀 */
+  font-size: x-large;  
+}
+/* a, b, c */
+/* a 있으면 a, 없으면 b, b 없으면 c, 폰트 있게 만듦 */
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+.sans-serif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.monospace {
+  font-family: consolas, Courier, monospace;
+}
+
+.oblique {
+  /* nomal, italic, oblique */
+  font-style: oblique;
+}
+
+.weight {
+  font-weight: 100;
+}
+
+.loose {
+  letter-spacing: 5px;
+}
+
+h1 { text-align: center; }
+h2 { text-align: right; }
+p.left { text-align: left; }
+p.justify { text-align: justify;}
+
+p.center { text-align: center; }
+/* a {
+  inline 은 센터 X
+  text-align: center;
+} */
+a { 
+  text-align: center;
+  display: block;
+}
+
+div.center-image {
+  text-align: center;
+}

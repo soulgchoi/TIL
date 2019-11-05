@@ -1,0 +1,61 @@
+/* article 중에 첫째 */
+article:first-of-type {
+    background-color: red;
+}
+
+/* article 중에 n째 */
+article:nth-of-type(2) {
+    background-color: green;
+}
+
+/* article 중에 막내 */
+article:last-of-type {
+    background-color: black;
+}
+
+/* last 에서 n 번째 */
+article:nth-last-of-type(2) {
+    background-color: blue;
+}
+
+/* p 요소 중에 첫번째 자식을 선택 */
+/* 첫째인데 까고보니 p */
+p:first-child {
+    color: rgba(58, 61, 221, 0.884);
+}
+/* p 요소 중에 마지막 자식을 선택, 막내인데 까고보니 p */
+p:last-child {
+    color: blueviolet;
+}
+
+/* 부모 상관 X, 아무튼 n째인데 p */
+p:nth-child(6) {
+    color: goldenrod;
+}
+
+/* pseudo class selector */
+/* 가상 클래스 셀렉터 */
+/* 상태에 따라 클래스를 바꾼다. */
+/* selector: 가상클래스 */
+a {
+    text-decoration: none; /* 기본 데코레이팅 없애줌 */
+    color: black;
+}
+/* 방문하지 않은 link */
+a:link {
+    color: tomato;
+}
+/* 마우스 올렸을 때 */
+a:hover {
+    color: orange;
+}
+/* 방문한 link */
+a:visited {
+    color: blanchedalmond;
+}
+
+input:focus {
+    background-color: black;
+    color: thistle;
+}
+

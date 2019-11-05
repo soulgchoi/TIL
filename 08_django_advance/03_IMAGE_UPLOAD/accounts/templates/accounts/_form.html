@@ -1,0 +1,9 @@
+{% load bootstrap4 %}
+
+<form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">submit</button>
+    {% endbuttons %}
+</form>

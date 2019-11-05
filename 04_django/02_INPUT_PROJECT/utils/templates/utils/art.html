@@ -1,0 +1,29 @@
+{% extends 'utils/base.html' %}
+{% block title %}ART{% endblock %}
+{% block body %}
+
+<h1>Asciify</h1>
+<p>
+    Input Some text below
+</p>
+
+<form action="/utils/output/" method="GET">
+    <div>
+        <label for="word">text</label>
+        <input id="word" name="user-input" type="text">
+    </div>
+    <div>
+        <label for="font">font</label>
+        <!-- <input id="font" name="user-font" type="text"> -->
+        <select name="user-font" id="font">
+            {% for font in fonts %}
+            <option value="{{ font }}">{{ font }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Select">
+    </div>
+</form>
+
+{% endblock %}

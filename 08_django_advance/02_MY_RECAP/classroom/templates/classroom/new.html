@@ -1,0 +1,27 @@
+{% extends 'classroom/base.html' %}
+
+{% block title %}작성하기{% endblock title %}
+
+
+{% block body %}
+    <form action="{% url 'classroom:create' %}" method="POST">
+    {% csrf_token %}
+        <div>
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="age">나이</label>
+            <input type="int" name="age" id="age">
+        </div>
+        <div>
+            <label for="major">전공</label>
+            <input type="text" name="major" id="major">
+        </div>
+        <div>
+            <input type="submit" value="등록">
+        </div>
+    </form>
+{% endblock body %}
+
+

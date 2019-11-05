@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="card-columns">
+{% for posting in postings %}
+    <a href="{% url 'postings:posting_detail' posting.id %}">
+        {% include 'postings/_posting.html' %}
+    </a>
+{% endfor %}
+</div>
+{% endblock body %}

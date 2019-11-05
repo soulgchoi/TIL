@@ -1,0 +1,16 @@
+<!-- bootstrap 으로 좀 예쁘게 할 것임 -->
+<article class="card mb-3">
+    <a href="{{ posting.get_absolute_url }}">
+    <!-- image 없이 저장했을 때 에러 해결하기 위해 -->
+    {% if posting.image %}
+        <img src="{{ posting.image.url }}" alt="{{ posting.image }}" class="card-img-top image-fluid">
+    {% else %}
+        <img src="http://picsum.photos/200/300" alt="random-image-{{ forloop.counter }}" class="card-img-top image-fluid">
+    {% endif %}
+    </a>
+    <div class="card-body">
+        <i class="fa-2x {{ posting.icon }}"></i>
+        <hr>
+        <p class="card-text">{{ posting.content }}</p>
+    </div>
+</article>

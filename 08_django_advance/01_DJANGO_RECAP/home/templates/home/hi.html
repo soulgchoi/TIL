@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %}  <!-- base.html 의 내용 상속 -->
+{% block title %}  <!-- base의 block 내용 그대로 가져와야 함 -->
+    Greeting Page
+{% endblock %}
+
+{% block body %}
+    {% if name == 'hi' %}
+        <h1>hihi??</h1>
+    {% else %}
+        <h1>Hi 0:) {{ name }}</h1>
+    {% endif %}
+{% endblock %}
+
+

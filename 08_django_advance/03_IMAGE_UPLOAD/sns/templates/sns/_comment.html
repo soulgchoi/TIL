@@ -1,0 +1,43 @@
+<div class="col-12 col-md-6">
+    <div class="card mb-2">
+        <div class="card-body">
+            <form action="{% url 'sns:create_comment' posting.id %}" method="POST">
+                {% csrf_token %}
+                <!-- request.user.username == request.user == user ( django 에서 지원 ) -->
+                <label for="comment"><strong>{{ user }}</strong>, leave comment</label>
+                <input type="text" name="content" id="comment" class="form-control" autofocus>
+                <!-- modelform 이 내용물을 자동으로 가져가는데, name 이 일치하지 않으면 제대로 가져갈 수 없다 -->
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            {% if comments %}
+                {% for comment in comments  %}
+                    <li class="list-group-item mb-1">
+                        <div class="row">
+                            <div class="col-10">
+                                <!-- comment.user 와 comment.posting.user 차이
+                                    comment.user == SELECT * FROM user WHERE id=comment.user.id
+                                    comment.posting.user == SELECT * FROM user WHERE id=comment.posting.user.id
+                                 -->
+                                <p>{{ comment.user }}: {{ comment.content }}</p>
+                                {% comment %} <p>익명{{ forloop.counter }}: {{ comment.content }}</p> {% endcomment %}
+                            </div>
+                            <div class="col-2">
+                                <form action="{% url 'sns:delete_comment' posting.id comment.id  %}" method="POST">
+                                    {% csrf_token %}
+                                    <button>
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li class="list-group-item mb-1">No comments yet</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

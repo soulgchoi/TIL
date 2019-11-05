@@ -1,0 +1,21 @@
+div.a {
+  background-color: bisque;
+  /* 박스의 총 가로 길이 = width + padding + border + margin */
+  /* width 는 컨텐트 영역만 지정 */
+  width: 300px;
+  /* 컨텐트가 더 길면 그냥 밖으로 삐져나옴 */
+  height: 200px;
+  padding: 25px;
+  border: 10px solid rosybrown;
+  /* 마진이 가로를 다 먹어버림! */
+  margin: 15px;
+  /* 위에서 높이 설정때문에 넘친 부분 잘라줌 */
+  overflow: hidden;
+}
+
+div.rounded {
+  border-radius: 10px;
+  border: 1px solid thistle;
+  width: 250px;
+  height: 200px;
+}

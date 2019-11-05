@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <style>
+     /* 보여지는 영역 */
+    </style>
+</head>
+<body>
+    <!-- Data 및 내용 -->
+    <h1>Hello World!</h1>
+    <button onclick="changeH1Text();">CHANGE</button>
+    <script>
+        // 프로그래밍 영역
+        // const header = document.querySelector('h1');
+        // console.log(header);
+        // document.querySelector('h1')
+        // header
+        // header.innerText
+        // header.innerHTML
+        // header.innerText = 'HappyHacking';
+
+        function changeH1Text() {
+            const header = document.querySelector('h1');
+            console.log(header);
+            const inputText = prompt('하이 빅스비');
+            header.innerText = inputText;
+        }
+    </script>
+</body>
+</html>

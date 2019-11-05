@@ -1,0 +1,19 @@
+{% extends 'board/base.html' %}
+
+{% block title %}Article: {{ article.id }}{% endblock  %}
+
+
+{% block body %}
+<form action="/board/articles/{{ article.id }}/update/" method="GET">
+	<div>
+		<input type="text" name="input_title" value={{ article.title }}>
+	</div>
+	<div>
+		<textarea name="input_content" cols="30" rows="10">{{ article.content }}</textarea>
+	</div>
+	<div>
+		<input type="submit" value="수정하기">
+    </div>
+</form>
+
+{% endblock  %}

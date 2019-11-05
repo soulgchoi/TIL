@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check_int</title>
+</head>
+<body>
+    <h1>
+        {{ num }} 은
+        {% if is_even %}
+            짝수
+        {% else %}
+            홀수
+        {% endif %}
+        입니다.
+    </h1>
+    
+    <h1>{{ num }} 은 {% if is_even %} 짝수 {% else %} 홀수 {% endif %} 입니다.</h1>
+
+    <!-- django 특수문법 -->
+    <!-- if 나 for 쓸 때 -->
+    {% if is_even %}
+        <h1>{{num}}은/는 짝수입니다.</h1>
+    {% else %}
+        <h1>{{num}}은/는 홀수입니다.</h1>
+    {% endif %}
+    <!-- 끝나는거 써줘야함 -->
+    <!-- {} 쓰는건 화면에 보여줄 때 -->
+</body>
+</html>
