@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="my-id" class="my-class">
+        1
+    </div>
+    <div class="my-class">
+        2
+    </div>
+    <div class="my-class">
+        3
+    </div>
+    <div>
+        4
+    </div>
+    <script>
+        const a = document.querySelector('div');
+        // querySelector 는 하나밖에 못잡기 때문에, div 는 세개지만 1 하나만
+        const b = document.querySelector('.my-class');
+        const c = document.querySelector('#my-id');
+
+        const d = document.querySelectorAll('div');
+        // 배열(노드 리스트) 형태, 모든 div > 1, 2, 3, 4 네 개
+        const e = document.querySelectorAll('.my-class');
+        // 클래스로 세 개
+        const f = document.querySelectorAll('#my-id');
+        // 하나밖에 없는데도 노드 리스트 형태
+        // querySelectorAll 은 무조건 노드 리스트
+
+        const g = document.createElement('div');
+
+        // createElement 는 태그만 가능 (아래 세 개는 전부 에러)
+        // const h = document.createElement('#new-one');
+        // const i = document.createElement('div#new-one');
+        // const j = document.createElement('div.my-class');
+
+        // 태그 외에 넣고 싶으면
+        g.classList.add('my-class')
+    </script>
+</body>
+</html>

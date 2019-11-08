@@ -15,12 +15,14 @@
     <div id="js-content-area">
 
     </div>
-
+    <!-- axios 로드 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         const url = 'https://koreanjson.com';
         const btn1 = document.querySelector('#js-data-load-btn');
         const btn2 = document.querySelector('#js-load-fetch');
         const btn3 = document.querySelector('#js-load-axios');
+        const area = document.querySelector('#js-content-area');
         let postId = 1;
         btn1.addEventListener('click', () => {
             // Asynchronous Javascript And XML
@@ -31,7 +33,7 @@
             AJAX.open('GET', `${url}/posts/${postId++}`);
             AJAX.send();
             AJAX.addEventListener('load', (e) => {
-                const area = document.querySelector('#js-content-area')
+                // const area = document.querySelector('#js-content-area')
                 const data = JSON.parse(e.target.response);
                 area.innerHTML += `<p>${data.title}</p>`
                 // console.log(e.target.response);
@@ -41,11 +43,24 @@
             fetch(`${url}/posts/${postId++}`)
                 .then(res => res.json())
                 .then(data => {
-                    const area = document.querySelector('#js-content-area');
+                    // const area = document.querySelector('#js-content-area');
                     area.innerHTML += `<p>${data.title}</p>`
                 })
                 .catch(err => console.error(err));
         });
+        btn3.addEventListener('click', () => {
+            // axios 는 parsing 을 우리가 할 필요가 없다는 게 포인트
+            axios.get(`${url}/posts/${postId++}`)  // Promise 필요
+                .then(res => res.data)  // Promise 에 then 을 붙인다
+                // return 된 data 를 가지고, 
+                // .then(data => console.log(data))
+                .then(data => {
+                    area.innerHTML += `<p>${data.title}</p>`
+                })
+                .catch(err => console.error(err));
+                // Promise 에서 하나라도 에러나면 어떡하지 하는 부분
+                // catch 는 한번만, 안되면 그냥 저기로 감
+        })
     </script>
 </body>
 </html>
