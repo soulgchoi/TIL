@@ -59,6 +59,9 @@
                             // window.sessionStorage.setItem() 은 귀찮으니까 vue-session 을 쓰는 것
                             this.$session.start();  // sessionStorage.session-id: sess: + Date.now()
                             this.$session.set('jwt', res.data.token);
+                            // dispatch => action 실행하는 메서드
+                            // 어떤 컴포넌트에 있어도 token 에 접근할 수 있도록
+                            this.$store.dispatch('login', res.data.token);
                             router.push('/')  // vue 에서의 redirect (실제 새로고침은 일어나지 않음)
                         })
                         .catch(err => {
