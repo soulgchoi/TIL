@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from iexfinance.stocks import Stock
-
+from decouple import config
 app = Flask(__name__)
 
 
@@ -18,7 +18,7 @@ def send():
 def receive():
     data = request.args.get('msg')
 
-    token = 'pk_ab6974e61cb545d9b1a92dafe8947a10'
+    token = config('TOKEN')
     stock = Stock(data, token=token).get_quote()
 
 

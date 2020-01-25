@@ -1,3 +1,4 @@
+var api_config = require('./api_config.json');
 // 1. input 태그 안의 값(value)을 잡는다.
 // const input = document.querySelector('#js-userinput').value;
 // console.log(input);
@@ -7,7 +8,6 @@ const button = document.querySelector('#js-go');
 const inputArea = document.querySelector('#js-userinput');
 const inputCount = document.querySelector('#js-image-count').value;
 const resultArea = document.querySelector('#js-result-area');
-// const API_KEY = 'AX330MzjmYdDwrXqgm4L84JfHv10O7jr'
 // const testWord = 'cat'
 // const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${testWord}&limit=3&offset=0&rating=G&lang=ko`
 // console.log(url);
@@ -57,7 +57,7 @@ inputArea.addEventListener('keypress', (event) => {
 const searchAndPush = (keyword) => {
     // const imageCount = document.querySelector('#js-image-count').value;
     const imageCount = 5;
-    const API_KEY = 'AX330MzjmYdDwrXqgm4L84JfHv10O7jr'
+    const API_KEY = api_config.API_KEY
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${imageCount}&offset=0&rating=G&lang=ko`
     const AJAX = new XMLHttpRequest();  // 요청 준비
     AJAX.open('GET', url);  // 요청 셋팅

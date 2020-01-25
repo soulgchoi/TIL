@@ -295,7 +295,7 @@ id는 선택자 selector
 ``````python
 @app.route('/receive')
 def receive():
-    token = 'pk_ab6974e61cb545d9b1a92dafe8947a10'
+    token = ''
     stock = Stock('TSLA', token=token).get_quote()
 
     data = request.args.get('msg') 

@@ -1,5 +1,5 @@
 import datetime
-
+from decouple import config
 from art import *
 from flask import Flask, render_template, request
 from iexfinance.stocks import Stock
@@ -58,7 +58,7 @@ def send():
 def receive():
     data = request.form.get('msg')
 
-    token = 'pk_ab6974e61cb545d9b1a92dafe8947a10'
+    token = config('TOKEN')
     stock = Stock(data, token=token).get_quote()
     company_name = stock['companyName']
     latest_price = stock['iexRealtimePrice']
