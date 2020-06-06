@@ -5,7 +5,7 @@ Click==7.0
 colorama==0.4.1
 decorator==4.4.0
 defusedxml==0.6.0
-Django==2.2.4
+Django==2.2.13
 entrypoints==0.3
 Flask==1.1.1
 ipykernel==5.1.1
